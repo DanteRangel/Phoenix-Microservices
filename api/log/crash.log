@@ -1,0 +1,256 @@
+2020-04-22 23:35:55 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {bad_return,{'Elixir.Api.Supervisors.Supervisor',init,{error,{already_started,<0.3088.0>}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-22 23:35:56 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:Elixir.Api.Supervisors.Supervisor/1
+    pid: <0.3088.0>
+    registered_name: []
+    exception exit: {{bad_return,{'Elixir.Api.Supervisors.Supervisor',init,{error,{already_started,<0.3088.0>}}}},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,358}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Api.Supervisor',<0.2953.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.2954.0>,{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{bad_return,{'Elixir.Api.Supervisors.Supervisor',init,{error,{already_started,<0.3088.0>}}}}}}}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 376
+    stack_size: 27
+    reductions: 260
+  neighbours:
+2020-04-22 23:35:56 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.2952.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{bad_return,{'Elixir.Api.Supervisors.Supervisor',init,{error,{already_started,<0.3088.0>}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.2951.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.2953.0>,normal}]
+    links: [<0.2951.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 217
+  neighbours:
+2020-04-23 00:41:40 =ERROR REPORT====
+Failed to start Ranch listener 'Elixir.ApiWeb.Endpoint.HTTP' in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{port,4000}]) for reason eaddrinuse (address already in use)
+2020-04-23 00:41:40 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.388.0>
+    registered_name: []
+    exception exit: {{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse},[{ranch_acceptors_sup,listen_error,5,[{file,"/app/deps/ranch/src/ranch_acceptors_sup.erl"},{line,66}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,295}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.386.0>,'Elixir.ApiWeb.Endpoint','Elixir.Api.Supervisor',<0.354.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.386.0>]
+    dictionary: [{logger,error_logger}]
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 4460
+  neighbours:
+2020-04-23 00:41:40 =SUPERVISOR REPORT====
+     Supervisor: {<0.386.0>,ranch_listener_sup}
+     Context:    start_error
+     Reason:     {listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}
+     Offender:   [{pid,undefined},{id,ranch_acceptors_sup},{mfargs,{ranch_acceptors_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 00:41:40 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.ApiWeb.Endpoint'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}
+     Offender:   [{pid,undefined},{id,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'}},{mfargs,{'Elixir.Phoenix.Endpoint.Cowboy2Adapter',start_link,[http,'Elixir.ApiWeb.Endpoint',{ranch_listener_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp,#{max_connections => 16384,num_acceptors => 100,socket_opts => [{port,4000}]},cowboy_clear,#{env => #{dispatch => [{'_',[],[{'_',[],'Elixir.Phoenix.Endpoint.Cowboy2Handler',{'Elixir.ApiWeb.Endpoint',[]}}]}]},stream_handlers => ['Elixir.Plug.Cowboy.Stream']}]}]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 00:41:40 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.ApiWeb.Endpoint'},{mfargs,{'Elixir.ApiWeb.Endpoint',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 00:41:40 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.353.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ApiWeb.Endpoint',{shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.352.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.354.0>,normal}]
+    links: [<0.352.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 232
+  neighbours:
+2020-04-23 01:08:43 =ERROR REPORT====
+Failed to start Ranch listener 'Elixir.ApiWeb.Endpoint.HTTP' in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{port,4000}]) for reason eaddrinuse (address already in use)
+2020-04-23 01:08:43 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.2986.0>
+    registered_name: []
+    exception exit: {{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse},[{ranch_acceptors_sup,listen_error,5,[{file,"/app/deps/ranch/src/ranch_acceptors_sup.erl"},{line,66}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,295}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.2984.0>,'Elixir.ApiWeb.Endpoint','Elixir.Api.Supervisor',<0.2953.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.2984.0>]
+    dictionary: [{logger,error_logger}]
+    trap_exit: true
+    status: running
+    heap_size: 2586
+    stack_size: 27
+    reductions: 4445
+  neighbours:
+2020-04-23 01:08:43 =SUPERVISOR REPORT====
+     Supervisor: {<0.2984.0>,ranch_listener_sup}
+     Context:    start_error
+     Reason:     {listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}
+     Offender:   [{pid,undefined},{id,ranch_acceptors_sup},{mfargs,{ranch_acceptors_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 01:08:43 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.ApiWeb.Endpoint'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}
+     Offender:   [{pid,undefined},{id,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'}},{mfargs,{'Elixir.Phoenix.Endpoint.Cowboy2Adapter',start_link,[http,'Elixir.ApiWeb.Endpoint',{ranch_listener_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp,#{max_connections => 16384,num_acceptors => 100,socket_opts => [{port,4000}]},cowboy_clear,#{env => #{dispatch => [{'_',[],[{'_',[],'Elixir.Phoenix.Endpoint.Cowboy2Handler',{'Elixir.ApiWeb.Endpoint',[]}}]}]},stream_handlers => ['Elixir.Plug.Cowboy.Stream']}]}]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 01:08:43 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.ApiWeb.Endpoint'},{mfargs,{'Elixir.ApiWeb.Endpoint',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 01:08:43 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.2952.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ApiWeb.Endpoint',{shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.2951.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.2953.0>,normal}]
+    links: [<0.2951.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 219
+  neighbours:
+2020-04-23 01:14:25 =ERROR REPORT====
+Failed to start Ranch listener 'Elixir.ApiWeb.Endpoint.HTTP' in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{port,4000}]) for reason eaddrinuse (address already in use)
+2020-04-23 01:14:25 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.522.0>
+    registered_name: []
+    exception exit: {{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse},[{ranch_acceptors_sup,listen_error,5,[{file,"/app/deps/ranch/src/ranch_acceptors_sup.erl"},{line,66}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,295}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.520.0>,'Elixir.ApiWeb.Endpoint','Elixir.Api.Supervisor',<0.488.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.520.0>]
+    dictionary: [{logger,error_logger}]
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 4430
+  neighbours:
+2020-04-23 01:14:25 =SUPERVISOR REPORT====
+     Supervisor: {<0.520.0>,ranch_listener_sup}
+     Context:    start_error
+     Reason:     {listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}
+     Offender:   [{pid,undefined},{id,ranch_acceptors_sup},{mfargs,{ranch_acceptors_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 01:14:25 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.ApiWeb.Endpoint'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}
+     Offender:   [{pid,undefined},{id,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'}},{mfargs,{'Elixir.Phoenix.Endpoint.Cowboy2Adapter',start_link,[http,'Elixir.ApiWeb.Endpoint',{ranch_listener_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp,#{max_connections => 16384,num_acceptors => 100,socket_opts => [{port,4000}]},cowboy_clear,#{env => #{dispatch => [{'_',[],[{'_',[],'Elixir.Phoenix.Endpoint.Cowboy2Handler',{'Elixir.ApiWeb.Endpoint',[]}}]}]},stream_handlers => ['Elixir.Plug.Cowboy.Stream']}]}]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 01:14:25 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.ApiWeb.Endpoint'},{mfargs,{'Elixir.ApiWeb.Endpoint',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 01:14:25 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.487.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ApiWeb.Endpoint',{shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.486.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.488.0>,normal}]
+    links: [<0.486.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 219
+  neighbours:
+2020-04-23 13:11:50 =ERROR REPORT====
+Failed to start Ranch listener 'Elixir.ApiWeb.Endpoint.HTTP' in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{port,4000}]) for reason eaddrinuse (address already in use)
+2020-04-23 13:11:50 =SUPERVISOR REPORT====
+     Supervisor: {<0.3095.0>,ranch_listener_sup}
+     Context:    start_error
+     Reason:     {listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}
+     Offender:   [{pid,undefined},{id,ranch_acceptors_sup},{mfargs,{ranch_acceptors_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 13:11:50 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:ranch_acceptors_sup/1
+    pid: <0.3097.0>
+    registered_name: []
+    exception exit: {{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse},[{ranch_acceptors_sup,listen_error,5,[{file,"/Users/danteulisesrangelrobles/Documents/Elixir/MicroservicesLab/api/deps/ranch/src/ranch_acceptors_sup.erl"},{line,66}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,295}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.3095.0>,'Elixir.ApiWeb.Endpoint','Elixir.Api.Supervisor',<0.3063.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.3095.0>]
+    dictionary: [{logger,error_logger}]
+    trap_exit: true
+    status: running
+    heap_size: 2586
+    stack_size: 27
+    reductions: 4445
+  neighbours:
+2020-04-23 13:11:50 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.ApiWeb.Endpoint'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}
+     Offender:   [{pid,undefined},{id,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'}},{mfargs,{'Elixir.Phoenix.Endpoint.Cowboy2Adapter',start_link,[http,'Elixir.ApiWeb.Endpoint',{ranch_listener_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp,#{max_connections => 16384,num_acceptors => 100,socket_opts => [{port,4000}]},cowboy_clear,#{env => #{dispatch => [{'_',[],[{'_',[],'Elixir.Phoenix.Endpoint.Cowboy2Handler',{'Elixir.ApiWeb.Endpoint',[]}}]}]},stream_handlers => ['Elixir.Plug.Cowboy.Stream']}]}]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 13:11:50 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.ApiWeb.Endpoint'},{mfargs,{'Elixir.ApiWeb.Endpoint',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-23 13:11:50 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.3062.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ApiWeb.Endpoint',{shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.3061.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.3063.0>,normal}]
+    links: [<0.3061.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 219
+  neighbours:
