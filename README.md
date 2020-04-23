@@ -8,7 +8,9 @@ To start this project:
 The application will install RabbitMQ and postgress and automaticaly docker install phoenix and run the migrations or the seeders
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser for you can see the API.
+
 Now you can visit [`localhost:4001`](http://localhost:4001) from your browser for you can see the First microservice.
+
 Now you can visit [`localhost:4002`](http://localhost:4002) from your browser for you can see the Second microservice.
 
 
