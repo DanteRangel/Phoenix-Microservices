@@ -1,0 +1,50 @@
+# The directory Mix will write compiled artifacts to.
+
+/api/_build/
+/microservice_1/_build/
+/microservice_2/_build/
+
+# If you run "mix test --cover", coverage assets end up here.
+/api/cover/
+/microservice_1/cover/
+/microservice_2/cover/
+
+# The directory Mix downloads your dependencies sources to.
+/api/deps/
+/microservice_1/deps/
+/microservice_2/deps/
+
+# Where 3rd-party dependencies like ExDoc output generated docs.
+/api/doc/
+/microservice_1/doc/
+/microservice_2/doc/
+
+# Ignore .fetch files in case you like to edit your project deps locally.
+/api/.fetch
+/microservice_1/.fetch
+/microservice_2/.fetch
+
+# If the VM crashes, it generates a dump, let's ignore it too.
+/api/erl_crash.dump
+/microservice_1/erl_crash.dump
+/microservice_2/erl_crash.dump
+
+# Also ignore archive artifacts (built via "mix archive.build").
+*.ez
+
+# Ignore package tarball (built via "mix hex.build").
+/microservice_1/microservice_1-*.tar
+/microservice_2/microservice_2-*.tar
+/api/api-*.tar
+
+# Since we are building assets from assets/,
+# we ignore priv/static. You may want to comment
+# this depending on your deployment strategy.
+/api/priv/static/
+/microservice_1/priv/static/
+/microservice_2/priv/static/
+
+/pgdata/
+
+.DS_Store
+ stack.exs
