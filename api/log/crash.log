@@ -1,256 +1,834 @@
-2020-04-22 23:35:55 =SUPERVISOR REPORT====
+2020-04-26 07:03:20 =SUPERVISOR REPORT====
+     Supervisor: {<0.418.0>,'Elixir.Supervisor.Default'}
+     Context:    start_error
+     Reason:     {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.464.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-26 07:03:20 =SUPERVISOR REPORT====
      Supervisor: {local,'Elixir.Api.Supervisor'}
      Context:    start_error
-     Reason:     {bad_return,{'Elixir.Api.Supervisors.Supervisor',init,{error,{already_started,<0.3088.0>}}}}
-     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.464.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
 
-2020-04-22 23:35:56 =CRASH REPORT====
-  crasher:
-    initial call: supervisor:Elixir.Api.Supervisors.Supervisor/1
-    pid: <0.3088.0>
-    registered_name: []
-    exception exit: {{bad_return,{'Elixir.Api.Supervisors.Supervisor',init,{error,{already_started,<0.3088.0>}}}},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,358}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
-    ancestors: ['Elixir.Api.Supervisor',<0.2953.0>]
-    message_queue_len: 1
-    messages: [{'EXIT',<0.2954.0>,{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{bad_return,{'Elixir.Api.Supervisors.Supervisor',init,{error,{already_started,<0.3088.0>}}}}}}}]
-    links: []
-    dictionary: []
-    trap_exit: true
-    status: running
-    heap_size: 376
-    stack_size: 27
-    reductions: 260
-  neighbours:
-2020-04-22 23:35:56 =CRASH REPORT====
+2020-04-26 07:03:20 =CRASH REPORT====
   crasher:
     initial call: application_master:init/4
-    pid: <0.2952.0>
+    pid: <0.385.0>
     registered_name: []
-    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{bad_return,{'Elixir.Api.Supervisors.Supervisor',init,{error,{already_started,<0.3088.0>}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
-    ancestors: [<0.2951.0>]
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.464.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.384.0>]
     message_queue_len: 1
-    messages: [{'EXIT',<0.2953.0>,normal}]
-    links: [<0.2951.0>,<0.44.0>]
+    messages: [{'EXIT',<0.386.0>,normal}]
+    links: [<0.384.0>,<0.44.0>]
     dictionary: []
     trap_exit: true
     status: running
-    heap_size: 610
+    heap_size: 987
     stack_size: 27
-    reductions: 217
+    reductions: 201
   neighbours:
-2020-04-23 00:41:40 =ERROR REPORT====
-Failed to start Ranch listener 'Elixir.ApiWeb.Endpoint.HTTP' in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{port,4000}]) for reason eaddrinuse (address already in use)
-2020-04-23 00:41:40 =CRASH REPORT====
+2020-04-26 07:03:24 =CRASH REPORT====
   crasher:
-    initial call: supervisor:ranch_acceptors_sup/1
-    pid: <0.388.0>
+    initial call: Elixir.Api.Supervisors.Connection:init/1
+    pid: <0.456.0>
     registered_name: []
-    exception exit: {{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse},[{ranch_acceptors_sup,listen_error,5,[{file,"/app/deps/ranch/src/ranch_acceptors_sup.erl"},{line,66}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,295}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
-    ancestors: [<0.386.0>,'Elixir.ApiWeb.Endpoint','Elixir.Api.Supervisor',<0.354.0>]
+    exception error: {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.459.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.455.0>,'Elixir.Api.Supervisors.Supervisor','Elixir.Api.Supervisor',<0.426.0>]
     message_queue_len: 0
     messages: []
-    links: [<0.386.0>]
-    dictionary: [{logger,error_logger}]
-    trap_exit: true
+    links: [<0.455.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
     status: running
     heap_size: 1598
     stack_size: 27
-    reductions: 4460
+    reductions: 51685
   neighbours:
-2020-04-23 00:41:40 =SUPERVISOR REPORT====
-     Supervisor: {<0.386.0>,ranch_listener_sup}
+2020-04-26 07:03:24 =SUPERVISOR REPORT====
+     Supervisor: {<0.455.0>,'Elixir.Supervisor.Default'}
      Context:    start_error
-     Reason:     {listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}
-     Offender:   [{pid,undefined},{id,ranch_acceptors_sup},{mfargs,{ranch_acceptors_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+     Reason:     {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.459.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
 
-2020-04-23 00:41:40 =SUPERVISOR REPORT====
-     Supervisor: {local,'Elixir.ApiWeb.Endpoint'}
-     Context:    start_error
-     Reason:     {shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}
-     Offender:   [{pid,undefined},{id,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'}},{mfargs,{'Elixir.Phoenix.Endpoint.Cowboy2Adapter',start_link,[http,'Elixir.ApiWeb.Endpoint',{ranch_listener_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp,#{max_connections => 16384,num_acceptors => 100,socket_opts => [{port,4000}]},cowboy_clear,#{env => #{dispatch => [{'_',[],[{'_',[],'Elixir.Phoenix.Endpoint.Cowboy2Handler',{'Elixir.ApiWeb.Endpoint',[]}}]}]},stream_handlers => ['Elixir.Plug.Cowboy.Stream']}]}]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
-
-2020-04-23 00:41:40 =SUPERVISOR REPORT====
+2020-04-26 07:03:24 =SUPERVISOR REPORT====
      Supervisor: {local,'Elixir.Api.Supervisor'}
      Context:    start_error
-     Reason:     {shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}
-     Offender:   [{pid,undefined},{id,'Elixir.ApiWeb.Endpoint'},{mfargs,{'Elixir.ApiWeb.Endpoint',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.459.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
 
-2020-04-23 00:41:40 =CRASH REPORT====
+2020-04-26 07:03:24 =CRASH REPORT====
   crasher:
     initial call: application_master:init/4
-    pid: <0.353.0>
+    pid: <0.425.0>
     registered_name: []
-    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ApiWeb.Endpoint',{shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
-    ancestors: [<0.352.0>]
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.459.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.424.0>]
     message_queue_len: 1
-    messages: [{'EXIT',<0.354.0>,normal}]
-    links: [<0.352.0>,<0.44.0>]
+    messages: [{'EXIT',<0.426.0>,normal}]
+    links: [<0.424.0>,<0.44.0>]
     dictionary: []
     trap_exit: true
     status: running
-    heap_size: 610
+    heap_size: 987
     stack_size: 27
-    reductions: 232
+    reductions: 188
   neighbours:
-2020-04-23 01:08:43 =ERROR REPORT====
-Failed to start Ranch listener 'Elixir.ApiWeb.Endpoint.HTTP' in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{port,4000}]) for reason eaddrinuse (address already in use)
-2020-04-23 01:08:43 =CRASH REPORT====
+2020-04-26 07:03:28 =CRASH REPORT====
   crasher:
-    initial call: supervisor:ranch_acceptors_sup/1
-    pid: <0.2986.0>
-    registered_name: []
-    exception exit: {{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse},[{ranch_acceptors_sup,listen_error,5,[{file,"/app/deps/ranch/src/ranch_acceptors_sup.erl"},{line,66}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,295}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
-    ancestors: [<0.2984.0>,'Elixir.ApiWeb.Endpoint','Elixir.Api.Supervisor',<0.2953.0>]
-    message_queue_len: 0
-    messages: []
-    links: [<0.2984.0>]
-    dictionary: [{logger,error_logger}]
-    trap_exit: true
-    status: running
-    heap_size: 2586
-    stack_size: 27
-    reductions: 4445
-  neighbours:
-2020-04-23 01:08:43 =SUPERVISOR REPORT====
-     Supervisor: {<0.2984.0>,ranch_listener_sup}
-     Context:    start_error
-     Reason:     {listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}
-     Offender:   [{pid,undefined},{id,ranch_acceptors_sup},{mfargs,{ranch_acceptors_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
-
-2020-04-23 01:08:43 =SUPERVISOR REPORT====
-     Supervisor: {local,'Elixir.ApiWeb.Endpoint'}
-     Context:    start_error
-     Reason:     {shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}
-     Offender:   [{pid,undefined},{id,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'}},{mfargs,{'Elixir.Phoenix.Endpoint.Cowboy2Adapter',start_link,[http,'Elixir.ApiWeb.Endpoint',{ranch_listener_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp,#{max_connections => 16384,num_acceptors => 100,socket_opts => [{port,4000}]},cowboy_clear,#{env => #{dispatch => [{'_',[],[{'_',[],'Elixir.Phoenix.Endpoint.Cowboy2Handler',{'Elixir.ApiWeb.Endpoint',[]}}]}]},stream_handlers => ['Elixir.Plug.Cowboy.Stream']}]}]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
-
-2020-04-23 01:08:43 =SUPERVISOR REPORT====
-     Supervisor: {local,'Elixir.Api.Supervisor'}
-     Context:    start_error
-     Reason:     {shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}
-     Offender:   [{pid,undefined},{id,'Elixir.ApiWeb.Endpoint'},{mfargs,{'Elixir.ApiWeb.Endpoint',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
-
-2020-04-23 01:08:43 =CRASH REPORT====
-  crasher:
-    initial call: application_master:init/4
-    pid: <0.2952.0>
-    registered_name: []
-    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ApiWeb.Endpoint',{shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
-    ancestors: [<0.2951.0>]
-    message_queue_len: 1
-    messages: [{'EXIT',<0.2953.0>,normal}]
-    links: [<0.2951.0>,<0.44.0>]
-    dictionary: []
-    trap_exit: true
-    status: running
-    heap_size: 610
-    stack_size: 27
-    reductions: 219
-  neighbours:
-2020-04-23 01:14:25 =ERROR REPORT====
-Failed to start Ranch listener 'Elixir.ApiWeb.Endpoint.HTTP' in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{port,4000}]) for reason eaddrinuse (address already in use)
-2020-04-23 01:14:25 =CRASH REPORT====
-  crasher:
-    initial call: supervisor:ranch_acceptors_sup/1
+    initial call: Elixir.Api.Supervisors.Connection:init/1
     pid: <0.522.0>
     registered_name: []
-    exception exit: {{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse},[{ranch_acceptors_sup,listen_error,5,[{file,"/app/deps/ranch/src/ranch_acceptors_sup.erl"},{line,66}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,295}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
-    ancestors: [<0.520.0>,'Elixir.ApiWeb.Endpoint','Elixir.Api.Supervisor',<0.488.0>]
+    exception error: {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.525.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.521.0>,'Elixir.Api.Supervisors.Supervisor','Elixir.Api.Supervisor',<0.386.0>]
     message_queue_len: 0
     messages: []
-    links: [<0.520.0>]
-    dictionary: [{logger,error_logger}]
+    links: [<0.521.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 51736
+  neighbours:
+2020-04-26 07:03:28 =SUPERVISOR REPORT====
+     Supervisor: {<0.521.0>,'Elixir.Supervisor.Default'}
+     Context:    start_error
+     Reason:     {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.525.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-26 07:03:28 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.525.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-26 07:03:28 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.385.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.525.0>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"lib/string/chars.ex"},{line,22}]},{'Elixir.IO',puts,2,[{file,"lib/io.ex"},{line,669}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,25}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,10}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.384.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.386.0>,normal}]
+    links: [<0.384.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 27
+    reductions: 188
+  neighbours:
+2020-04-26 07:50:12 =ERROR REPORT====
+** Generic server <0.458.0> terminating 
+** Last message in was connect
+** When Server state == {<0.457.0>,{amqp_params_network,nil,<<"68zmC1Ec7NKTHpA+AvVqnScJF3ARsu6z7KcZMWoM5OwTg+VyPk1ENdBuYzaQyd/Y">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}
+** Reason for termination ==
+** {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.457.0>,{amqp_params_network,nil,<<"68zmC1Ec7NKTHpA+AvVqnScJF3ARsu6z7KcZMWoM5OwTg+VyPk1ENdBuYzaQyd/Y">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+** Client 'Elixir.Api.Supervisors.Connection' stacktrace
+** [{gen,do_call,4,[{file,"gen.erl"},{line,167}]},{gen_server,call,3,[{file,"gen_server.erl"},{line,219}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]
+2020-04-26 07:50:12 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.458.0>
+    registered_name: []
+    exception error: {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.457.0>,{amqp_params_network,nil,<<"68zmC1Ec7NKTHpA+AvVqnScJF3ARsu6z7KcZMWoM5OwTg+VyPk1ENdBuYzaQyd/Y">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.456.0>,amqp_sup,<0.319.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.456.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 10958
+    stack_size: 27
+    reductions: 35896
+  neighbours:
+2020-04-26 07:50:12 =SUPERVISOR REPORT====
+     Supervisor: {<0.456.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.457.0>,{amqp_params_network,nil,<<"68zmC1Ec7NKTHpA+AvVqnScJF3ARsu6z7KcZMWoM5OwTg+VyPk1ENdBuYzaQyd/Y">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.458.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.457.0>,{amqp_params_network,nil,<<"68zmC1Ec7NKTHpA+AvVqnScJF3ARsu6z7KcZMWoM5OwTg+VyPk1ENdBuYzaQyd/Y">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:50:12 =SUPERVISOR REPORT====
+     Supervisor: {<0.456.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.458.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.457.0>,{amqp_params_network,nil,<<"68zmC1Ec7NKTHpA+AvVqnScJF3ARsu6z7KcZMWoM5OwTg+VyPk1ENdBuYzaQyd/Y">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:50:12 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Api.Supervisors.Connection:init/1
+    pid: <0.419.0>
+    registered_name: []
+    exception exit: {{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.457.0>,{amqp_params_network,nil,<<"68zmC1Ec7NKTHpA+AvVqnScJF3ARsu6z7KcZMWoM5OwTg+VyPk1ENdBuYzaQyd/Y">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.458.0>,connect,60000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,223}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.418.0>,'Elixir.Api.Supervisors.Supervisor','Elixir.Api.Supervisor',<0.386.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.418.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 4185
+    stack_size: 27
+    reductions: 189844
+  neighbours:
+2020-04-26 07:50:12 =SUPERVISOR REPORT====
+     Supervisor: {<0.418.0>,'Elixir.Supervisor.Default'}
+     Context:    start_error
+     Reason:     {{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.457.0>,{amqp_params_network,nil,<<"68zmC1Ec7NKTHpA+AvVqnScJF3ARsu6z7KcZMWoM5OwTg+VyPk1ENdBuYzaQyd/Y">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.458.0>,connect,60000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-26 07:50:12 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.457.0>,{amqp_params_network,nil,<<"68zmC1Ec7NKTHpA+AvVqnScJF3ARsu6z7KcZMWoM5OwTg+VyPk1ENdBuYzaQyd/Y">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.458.0>,connect,60000]}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-26 07:50:12 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.385.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.457.0>,{amqp_params_network,nil,<<"68zmC1Ec7NKTHpA+AvVqnScJF3ARsu6z7KcZMWoM5OwTg+VyPk1ENdBuYzaQyd/Y">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.458.0>,connect,60000]}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.384.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.386.0>,normal}]
+    links: [<0.384.0>,<0.44.0>]
+    dictionary: []
     trap_exit: true
     status: running
     heap_size: 1598
     stack_size: 27
-    reductions: 4430
+    reductions: 184
   neighbours:
-2020-04-23 01:14:25 =SUPERVISOR REPORT====
-     Supervisor: {<0.520.0>,ranch_listener_sup}
-     Context:    start_error
-     Reason:     {listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}
-     Offender:   [{pid,undefined},{id,ranch_acceptors_sup},{mfargs,{ranch_acceptors_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
-
-2020-04-23 01:14:25 =SUPERVISOR REPORT====
-     Supervisor: {local,'Elixir.ApiWeb.Endpoint'}
-     Context:    start_error
-     Reason:     {shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}
-     Offender:   [{pid,undefined},{id,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'}},{mfargs,{'Elixir.Phoenix.Endpoint.Cowboy2Adapter',start_link,[http,'Elixir.ApiWeb.Endpoint',{ranch_listener_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp,#{max_connections => 16384,num_acceptors => 100,socket_opts => [{port,4000}]},cowboy_clear,#{env => #{dispatch => [{'_',[],[{'_',[],'Elixir.Phoenix.Endpoint.Cowboy2Handler',{'Elixir.ApiWeb.Endpoint',[]}}]}]},stream_handlers => ['Elixir.Plug.Cowboy.Stream']}]}]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
-
-2020-04-23 01:14:25 =SUPERVISOR REPORT====
-     Supervisor: {local,'Elixir.Api.Supervisor'}
-     Context:    start_error
-     Reason:     {shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}
-     Offender:   [{pid,undefined},{id,'Elixir.ApiWeb.Endpoint'},{mfargs,{'Elixir.ApiWeb.Endpoint',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
-
-2020-04-23 01:14:25 =CRASH REPORT====
+2020-04-26 07:50:17 =ERROR REPORT====
+** Generic server <0.449.0> terminating 
+** Last message in was connect
+** When Server state == {<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}
+** Reason for termination ==
+** {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+** Client 'Elixir.Api.Supervisors.Connection' stacktrace
+** [{gen,do_call,4,[{file,"gen.erl"},{line,167}]},{gen_server,call,3,[{file,"gen_server.erl"},{line,219}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]
+2020-04-26 07:50:17 =CRASH REPORT====
   crasher:
-    initial call: application_master:init/4
-    pid: <0.487.0>
+    initial call: amqp_gen_connection:init/1
+    pid: <0.449.0>
     registered_name: []
-    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ApiWeb.Endpoint',{shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
-    ancestors: [<0.486.0>]
-    message_queue_len: 1
-    messages: [{'EXIT',<0.488.0>,normal}]
-    links: [<0.486.0>,<0.44.0>]
+    exception error: {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.447.0>,amqp_sup,<0.385.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.447.0>]
     dictionary: []
     trap_exit: true
     status: running
-    heap_size: 610
+    heap_size: 10958
     stack_size: 27
-    reductions: 219
+    reductions: 28673
   neighbours:
-2020-04-23 13:11:50 =ERROR REPORT====
-Failed to start Ranch listener 'Elixir.ApiWeb.Endpoint.HTTP' in ranch_tcp:listen([{cacerts,'...'},{key,'...'},{cert,'...'},{port,4000}]) for reason eaddrinuse (address already in use)
-2020-04-23 13:11:50 =SUPERVISOR REPORT====
-     Supervisor: {<0.3095.0>,ranch_listener_sup}
-     Context:    start_error
-     Reason:     {listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}
-     Offender:   [{pid,undefined},{id,ranch_acceptors_sup},{mfargs,{ranch_acceptors_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+2020-04-26 07:50:17 =SUPERVISOR REPORT====
+     Supervisor: {<0.447.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.449.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
 
-2020-04-23 13:11:50 =CRASH REPORT====
+2020-04-26 07:50:17 =SUPERVISOR REPORT====
+     Supervisor: {<0.447.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.449.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:50:17 =CRASH REPORT====
   crasher:
-    initial call: supervisor:ranch_acceptors_sup/1
-    pid: <0.3097.0>
+    initial call: Elixir.Api.Supervisors.Connection:init/1
+    pid: <0.446.0>
     registered_name: []
-    exception exit: {{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse},[{ranch_acceptors_sup,listen_error,5,[{file,"/Users/danteulisesrangelrobles/Documents/Elixir/MicroservicesLab/api/deps/ranch/src/ranch_acceptors_sup.erl"},{line,66}]},{supervisor,init,1,[{file,"supervisor.erl"},{line,295}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
-    ancestors: [<0.3095.0>,'Elixir.ApiWeb.Endpoint','Elixir.Api.Supervisor',<0.3063.0>]
+    exception exit: {{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.449.0>,connect,60000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,223}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.445.0>,'Elixir.Api.Supervisors.Supervisor','Elixir.Api.Supervisor',<0.416.0>]
     message_queue_len: 0
     messages: []
-    links: [<0.3095.0>]
-    dictionary: [{logger,error_logger}]
+    links: [<0.445.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 14866
+  neighbours:
+2020-04-26 07:50:17 =SUPERVISOR REPORT====
+     Supervisor: {<0.445.0>,'Elixir.Supervisor.Default'}
+     Context:    start_error
+     Reason:     {{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.449.0>,connect,60000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-26 07:50:17 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Api.Supervisors.Supervisor:init/1
+    pid: <0.444.0>
+    registered_name: 'Elixir.Api.Supervisors.Supervisor'
+    exception exit: {{bad_return_value,{error,{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.449.0>,connect,60000]}}}}}},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,366}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Api.Supervisor',<0.416.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.417.0>,<0.445.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 262
+  neighbours:
+2020-04-26 07:50:17 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {bad_return_value,{error,{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.449.0>,connect,60000]}}}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-26 07:50:17 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.415.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{bad_return_value,{error,{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.448.0>,{amqp_params_network,nil,<<"Juj+dvyRXuGUqnw+n7dAPsKxyzLxCZP3nKQz7acjEsylsIcybflrbnemwWsi9JoM">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.449.0>,connect,60000]}}}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.414.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.416.0>,normal}]
+    links: [<0.414.0>,<0.44.0>]
+    dictionary: []
     trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 180
+  neighbours:
+2020-04-26 07:50:20 =ERROR REPORT====
+** Generic server <0.525.0> terminating 
+** Last message in was connect
+** When Server state == {<0.524.0>,{amqp_params_network,nil,<<"2AB67N1LzNZHugMenYDLnDLccc7mwyLLknJNMD6sYc8XeLgQ+SPokmg3UTQM7F0s">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}
+** Reason for termination ==
+** {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"2AB67N1LzNZHugMenYDLnDLccc7mwyLLknJNMD6sYc8XeLgQ+SPokmg3UTQM7F0s">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+** Client 'Elixir.Api.Supervisors.Connection' stacktrace
+** [{gen,do_call,4,[{file,"gen.erl"},{line,167}]},{gen_server,call,3,[{file,"gen_server.erl"},{line,219}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]
+2020-04-26 07:50:20 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.525.0>
+    registered_name: []
+    exception error: {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"2AB67N1LzNZHugMenYDLnDLccc7mwyLLknJNMD6sYc8XeLgQ+SPokmg3UTQM7F0s">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.523.0>,amqp_sup,<0.319.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.523.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 10958
+    stack_size: 27
+    reductions: 36303
+  neighbours:
+2020-04-26 07:50:20 =SUPERVISOR REPORT====
+     Supervisor: {<0.523.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"2AB67N1LzNZHugMenYDLnDLccc7mwyLLknJNMD6sYc8XeLgQ+SPokmg3UTQM7F0s">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.525.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.524.0>,{amqp_params_network,nil,<<"2AB67N1LzNZHugMenYDLnDLccc7mwyLLknJNMD6sYc8XeLgQ+SPokmg3UTQM7F0s">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:50:20 =SUPERVISOR REPORT====
+     Supervisor: {<0.523.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.525.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.524.0>,{amqp_params_network,nil,<<"2AB67N1LzNZHugMenYDLnDLccc7mwyLLknJNMD6sYc8XeLgQ+SPokmg3UTQM7F0s">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:50:20 =SUPERVISOR REPORT====
+     Supervisor: {<0.521.0>,'Elixir.Supervisor.Default'}
+     Context:    start_error
+     Reason:     {{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"2AB67N1LzNZHugMenYDLnDLccc7mwyLLknJNMD6sYc8XeLgQ+SPokmg3UTQM7F0s">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.525.0>,connect,60000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-26 07:50:20 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"2AB67N1LzNZHugMenYDLnDLccc7mwyLLknJNMD6sYc8XeLgQ+SPokmg3UTQM7F0s">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.525.0>,connect,60000]}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-26 07:50:20 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.385.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"2AB67N1LzNZHugMenYDLnDLccc7mwyLLknJNMD6sYc8XeLgQ+SPokmg3UTQM7F0s">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.525.0>,connect,60000]}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.384.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.386.0>,normal}]
+    links: [<0.384.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 184
+  neighbours:
+2020-04-26 07:58:07 =ERROR REPORT====
+** Generic server <0.452.0> terminating 
+** Last message in was connect
+** When Server state == {<0.451.0>,{amqp_params_network,nil,<<"4HdWJ6Ex2S4q1LYCE8Q31FpWlkqd2GtPZelqjWunmcRnAiQcME//j2A50yVvO0VI">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}
+** Reason for termination ==
+** {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.451.0>,{amqp_params_network,nil,<<"4HdWJ6Ex2S4q1LYCE8Q31FpWlkqd2GtPZelqjWunmcRnAiQcME//j2A50yVvO0VI">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+** Client 'Elixir.Api.Supervisors.Connection' stacktrace
+** [{gen,do_call,4,[{file,"gen.erl"},{line,167}]},{gen_server,call,3,[{file,"gen_server.erl"},{line,219}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]
+2020-04-26 07:58:08 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.452.0>
+    registered_name: []
+    exception error: {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.451.0>,{amqp_params_network,nil,<<"4HdWJ6Ex2S4q1LYCE8Q31FpWlkqd2GtPZelqjWunmcRnAiQcME//j2A50yVvO0VI">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.450.0>,amqp_sup,<0.319.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.450.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 10958
+    stack_size: 27
+    reductions: 35865
+  neighbours:
+2020-04-26 07:58:08 =SUPERVISOR REPORT====
+     Supervisor: {<0.450.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.451.0>,{amqp_params_network,nil,<<"4HdWJ6Ex2S4q1LYCE8Q31FpWlkqd2GtPZelqjWunmcRnAiQcME//j2A50yVvO0VI">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.452.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.451.0>,{amqp_params_network,nil,<<"4HdWJ6Ex2S4q1LYCE8Q31FpWlkqd2GtPZelqjWunmcRnAiQcME//j2A50yVvO0VI">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:58:08 =SUPERVISOR REPORT====
+     Supervisor: {<0.450.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.452.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.451.0>,{amqp_params_network,nil,<<"4HdWJ6Ex2S4q1LYCE8Q31FpWlkqd2GtPZelqjWunmcRnAiQcME//j2A50yVvO0VI">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:58:08 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Api.Supervisors.Connection:init/1
+    pid: <0.419.0>
+    registered_name: []
+    exception exit: {{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.451.0>,{amqp_params_network,nil,<<"4HdWJ6Ex2S4q1LYCE8Q31FpWlkqd2GtPZelqjWunmcRnAiQcME//j2A50yVvO0VI">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.452.0>,connect,60000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,223}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.418.0>,'Elixir.Api.Supervisors.Supervisor','Elixir.Api.Supervisor',<0.386.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.418.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 4185
+    stack_size: 27
+    reductions: 160807
+  neighbours:
+2020-04-26 07:58:08 =SUPERVISOR REPORT====
+     Supervisor: {<0.418.0>,'Elixir.Supervisor.Default'}
+     Context:    start_error
+     Reason:     {{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.451.0>,{amqp_params_network,nil,<<"4HdWJ6Ex2S4q1LYCE8Q31FpWlkqd2GtPZelqjWunmcRnAiQcME//j2A50yVvO0VI">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.452.0>,connect,60000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-26 07:58:08 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.451.0>,{amqp_params_network,nil,<<"4HdWJ6Ex2S4q1LYCE8Q31FpWlkqd2GtPZelqjWunmcRnAiQcME//j2A50yVvO0VI">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.452.0>,connect,60000]}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-26 07:58:08 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.385.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.451.0>,{amqp_params_network,nil,<<"4HdWJ6Ex2S4q1LYCE8Q31FpWlkqd2GtPZelqjWunmcRnAiQcME//j2A50yVvO0VI">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.452.0>,connect,60000]}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.384.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.386.0>,normal}]
+    links: [<0.384.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 184
+  neighbours:
+2020-04-26 07:58:13 =ERROR REPORT====
+** Generic server <0.444.0> terminating 
+** Last message in was connect
+** When Server state == {<0.443.0>,{amqp_params_network,nil,<<"3+47uEupunk47mn69XBI5Z+Sk5lGcbrroWj3UFW6ZgpFy8T5vuutmxtIPEwhf2/G">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}
+** Reason for termination ==
+** {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"3+47uEupunk47mn69XBI5Z+Sk5lGcbrroWj3UFW6ZgpFy8T5vuutmxtIPEwhf2/G">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+** Client 'Elixir.Api.Supervisors.Connection' stacktrace
+** [{gen,do_call,4,[{file,"gen.erl"},{line,167}]},{gen_server,call,3,[{file,"gen_server.erl"},{line,219}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]
+2020-04-26 07:58:13 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.444.0>
+    registered_name: []
+    exception error: {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"3+47uEupunk47mn69XBI5Z+Sk5lGcbrroWj3UFW6ZgpFy8T5vuutmxtIPEwhf2/G">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.442.0>,amqp_sup,<0.380.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.442.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 10958
+    stack_size: 27
+    reductions: 28673
+  neighbours:
+2020-04-26 07:58:13 =SUPERVISOR REPORT====
+     Supervisor: {<0.442.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"3+47uEupunk47mn69XBI5Z+Sk5lGcbrroWj3UFW6ZgpFy8T5vuutmxtIPEwhf2/G">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.444.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.443.0>,{amqp_params_network,nil,<<"3+47uEupunk47mn69XBI5Z+Sk5lGcbrroWj3UFW6ZgpFy8T5vuutmxtIPEwhf2/G">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:58:13 =SUPERVISOR REPORT====
+     Supervisor: {<0.442.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.444.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.443.0>,{amqp_params_network,nil,<<"3+47uEupunk47mn69XBI5Z+Sk5lGcbrroWj3UFW6ZgpFy8T5vuutmxtIPEwhf2/G">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:58:13 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Api.Supervisors.Connection:init/1
+    pid: <0.441.0>
+    registered_name: []
+    exception exit: {{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"3+47uEupunk47mn69XBI5Z+Sk5lGcbrroWj3UFW6ZgpFy8T5vuutmxtIPEwhf2/G">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.444.0>,connect,60000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,223}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.440.0>,'Elixir.Api.Supervisors.Supervisor','Elixir.Api.Supervisor',<0.411.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.440.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 14866
+  neighbours:
+2020-04-26 07:58:13 =SUPERVISOR REPORT====
+     Supervisor: {<0.440.0>,'Elixir.Supervisor.Default'}
+     Context:    start_error
+     Reason:     {{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"3+47uEupunk47mn69XBI5Z+Sk5lGcbrroWj3UFW6ZgpFy8T5vuutmxtIPEwhf2/G">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.444.0>,connect,60000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-26 07:58:13 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"3+47uEupunk47mn69XBI5Z+Sk5lGcbrroWj3UFW6ZgpFy8T5vuutmxtIPEwhf2/G">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.444.0>,connect,60000]}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-26 07:58:13 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.410.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"3+47uEupunk47mn69XBI5Z+Sk5lGcbrroWj3UFW6ZgpFy8T5vuutmxtIPEwhf2/G">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.444.0>,connect,60000]}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.409.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.411.0>,normal}]
+    links: [<0.409.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 180
+  neighbours:
+2020-04-26 07:58:16 =ERROR REPORT====
+** Generic server <0.525.0> terminating 
+** Last message in was connect
+** When Server state == {<0.524.0>,{amqp_params_network,nil,<<"8HYGru1YXYgLFU5+MOcltXn2KbNBrZXhigntm7VAOYuwqpkT8pMM/yGcSeDB8DvO">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}
+** Reason for termination ==
+** {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"8HYGru1YXYgLFU5+MOcltXn2KbNBrZXhigntm7VAOYuwqpkT8pMM/yGcSeDB8DvO">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+** Client 'Elixir.Api.Supervisors.Connection' stacktrace
+** [{gen,do_call,4,[{file,"gen.erl"},{line,167}]},{gen_server,call,3,[{file,"gen_server.erl"},{line,219}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]
+2020-04-26 07:58:16 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.525.0>
+    registered_name: []
+    exception error: {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"8HYGru1YXYgLFU5+MOcltXn2KbNBrZXhigntm7VAOYuwqpkT8pMM/yGcSeDB8DvO">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.523.0>,amqp_sup,<0.319.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.523.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 10958
+    stack_size: 27
+    reductions: 36312
+  neighbours:
+2020-04-26 07:58:16 =SUPERVISOR REPORT====
+     Supervisor: {<0.523.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"8HYGru1YXYgLFU5+MOcltXn2KbNBrZXhigntm7VAOYuwqpkT8pMM/yGcSeDB8DvO">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.525.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.524.0>,{amqp_params_network,nil,<<"8HYGru1YXYgLFU5+MOcltXn2KbNBrZXhigntm7VAOYuwqpkT8pMM/yGcSeDB8DvO">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:58:16 =SUPERVISOR REPORT====
+     Supervisor: {<0.523.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.525.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.524.0>,{amqp_params_network,nil,<<"8HYGru1YXYgLFU5+MOcltXn2KbNBrZXhigntm7VAOYuwqpkT8pMM/yGcSeDB8DvO">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 07:58:16 =SUPERVISOR REPORT====
+     Supervisor: {<0.521.0>,'Elixir.Supervisor.Default'}
+     Context:    start_error
+     Reason:     {{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"8HYGru1YXYgLFU5+MOcltXn2KbNBrZXhigntm7VAOYuwqpkT8pMM/yGcSeDB8DvO">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.525.0>,connect,60000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-26 07:58:16 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"8HYGru1YXYgLFU5+MOcltXn2KbNBrZXhigntm7VAOYuwqpkT8pMM/yGcSeDB8DvO">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.525.0>,connect,60000]}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-26 07:58:16 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.385.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"8HYGru1YXYgLFU5+MOcltXn2KbNBrZXhigntm7VAOYuwqpkT8pMM/yGcSeDB8DvO">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.525.0>,connect,60000]}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.384.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.386.0>,normal}]
+    links: [<0.384.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 180
+  neighbours:
+2020-04-26 08:00:23 =ERROR REPORT====
+** Generic server <0.455.0> terminating 
+** Last message in was connect
+** When Server state == {<0.454.0>,{amqp_params_network,nil,<<"ZNzvQ2akBEgZpPtWlsZZqJV1ho1mTHV1pjz4/K7cP7Lh5tCwZUhs2c+buttjvXqs">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}
+** Reason for termination ==
+** {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.454.0>,{amqp_params_network,nil,<<"ZNzvQ2akBEgZpPtWlsZZqJV1ho1mTHV1pjz4/K7cP7Lh5tCwZUhs2c+buttjvXqs">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+** Client 'Elixir.Api.Supervisors.Connection' stacktrace
+** [{gen,do_call,4,[{file,"gen.erl"},{line,167}]},{gen_server,call,3,[{file,"gen_server.erl"},{line,219}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]
+2020-04-26 08:00:23 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.455.0>
+    registered_name: []
+    exception error: {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.454.0>,{amqp_params_network,nil,<<"ZNzvQ2akBEgZpPtWlsZZqJV1ho1mTHV1pjz4/K7cP7Lh5tCwZUhs2c+buttjvXqs">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.453.0>,amqp_sup,<0.319.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.453.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 10958
+    stack_size: 27
+    reductions: 35860
+  neighbours:
+2020-04-26 08:00:23 =SUPERVISOR REPORT====
+     Supervisor: {<0.453.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.454.0>,{amqp_params_network,nil,<<"ZNzvQ2akBEgZpPtWlsZZqJV1ho1mTHV1pjz4/K7cP7Lh5tCwZUhs2c+buttjvXqs">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.455.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.454.0>,{amqp_params_network,nil,<<"ZNzvQ2akBEgZpPtWlsZZqJV1ho1mTHV1pjz4/K7cP7Lh5tCwZUhs2c+buttjvXqs">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 08:00:24 =SUPERVISOR REPORT====
+     Supervisor: {<0.453.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.455.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.454.0>,{amqp_params_network,nil,<<"ZNzvQ2akBEgZpPtWlsZZqJV1ho1mTHV1pjz4/K7cP7Lh5tCwZUhs2c+buttjvXqs">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 08:00:24 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Api.Supervisors.Connection:init/1
+    pid: <0.419.0>
+    registered_name: []
+    exception exit: {{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.454.0>,{amqp_params_network,nil,<<"ZNzvQ2akBEgZpPtWlsZZqJV1ho1mTHV1pjz4/K7cP7Lh5tCwZUhs2c+buttjvXqs">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.455.0>,connect,60000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,223}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.418.0>,'Elixir.Api.Supervisors.Supervisor','Elixir.Api.Supervisor',<0.386.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.418.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
     status: running
     heap_size: 2586
     stack_size: 27
-    reductions: 4445
+    reductions: 175400
   neighbours:
-2020-04-23 13:11:50 =SUPERVISOR REPORT====
-     Supervisor: {local,'Elixir.ApiWeb.Endpoint'}
+2020-04-26 08:00:24 =SUPERVISOR REPORT====
+     Supervisor: {<0.418.0>,'Elixir.Supervisor.Default'}
      Context:    start_error
-     Reason:     {shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}
-     Offender:   [{pid,undefined},{id,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'}},{mfargs,{'Elixir.Phoenix.Endpoint.Cowboy2Adapter',start_link,[http,'Elixir.ApiWeb.Endpoint',{ranch_listener_sup,start_link,['Elixir.ApiWeb.Endpoint.HTTP',ranch_tcp,#{max_connections => 16384,num_acceptors => 100,socket_opts => [{port,4000}]},cowboy_clear,#{env => #{dispatch => [{'_',[],[{'_',[],'Elixir.Phoenix.Endpoint.Cowboy2Handler',{'Elixir.ApiWeb.Endpoint',[]}}]}]},stream_handlers => ['Elixir.Plug.Cowboy.Stream']}]}]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+     Reason:     {{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.454.0>,{amqp_params_network,nil,<<"ZNzvQ2akBEgZpPtWlsZZqJV1ho1mTHV1pjz4/K7cP7Lh5tCwZUhs2c+buttjvXqs">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.455.0>,connect,60000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
 
-2020-04-23 13:11:50 =SUPERVISOR REPORT====
+2020-04-26 08:00:24 =SUPERVISOR REPORT====
      Supervisor: {local,'Elixir.Api.Supervisor'}
      Context:    start_error
-     Reason:     {shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}
-     Offender:   [{pid,undefined},{id,'Elixir.ApiWeb.Endpoint'},{mfargs,{'Elixir.ApiWeb.Endpoint',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.454.0>,{amqp_params_network,nil,<<"ZNzvQ2akBEgZpPtWlsZZqJV1ho1mTHV1pjz4/K7cP7Lh5tCwZUhs2c+buttjvXqs">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.455.0>,connect,60000]}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
 
-2020-04-23 13:11:50 =CRASH REPORT====
+2020-04-26 08:00:24 =CRASH REPORT====
   crasher:
     initial call: application_master:init/4
-    pid: <0.3062.0>
+    pid: <0.385.0>
     registered_name: []
-    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ApiWeb.Endpoint',{shutdown,{failed_to_start_child,{ranch_listener_sup,'Elixir.ApiWeb.Endpoint.HTTP'},{shutdown,{failed_to_start_child,ranch_acceptors_sup,{listen_error,'Elixir.ApiWeb.Endpoint.HTTP',eaddrinuse}}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
-    ancestors: [<0.3061.0>]
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.454.0>,{amqp_params_network,nil,<<"ZNzvQ2akBEgZpPtWlsZZqJV1ho1mTHV1pjz4/K7cP7Lh5tCwZUhs2c+buttjvXqs">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.455.0>,connect,60000]}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.384.0>]
     message_queue_len: 1
-    messages: [{'EXIT',<0.3063.0>,normal}]
-    links: [<0.3061.0>,<0.44.0>]
+    messages: [{'EXIT',<0.386.0>,normal}]
+    links: [<0.384.0>,<0.44.0>]
     dictionary: []
     trap_exit: true
     status: running
-    heap_size: 610
+    heap_size: 1598
     stack_size: 27
-    reductions: 219
+    reductions: 180
+  neighbours:
+2020-04-26 08:00:29 =ERROR REPORT====
+** Generic server <0.444.0> terminating 
+** Last message in was connect
+** When Server state == {<0.443.0>,{amqp_params_network,nil,<<"JmRZ914ZltyOkEacnJCL8TaPHBZqQpmQx50Mlsrw5RHkw6DLf6fMWjU+Vwqq2ORo">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}
+** Reason for termination ==
+** {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"JmRZ914ZltyOkEacnJCL8TaPHBZqQpmQx50Mlsrw5RHkw6DLf6fMWjU+Vwqq2ORo">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+** Client 'Elixir.Api.Supervisors.Connection' stacktrace
+** [{gen,do_call,4,[{file,"gen.erl"},{line,167}]},{gen_server,call,3,[{file,"gen_server.erl"},{line,219}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]
+2020-04-26 08:00:29 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.444.0>
+    registered_name: []
+    exception error: {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"JmRZ914ZltyOkEacnJCL8TaPHBZqQpmQx50Mlsrw5RHkw6DLf6fMWjU+Vwqq2ORo">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.442.0>,amqp_sup,<0.380.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.442.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 10958
+    stack_size: 27
+    reductions: 28668
+  neighbours:
+2020-04-26 08:00:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.442.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"JmRZ914ZltyOkEacnJCL8TaPHBZqQpmQx50Mlsrw5RHkw6DLf6fMWjU+Vwqq2ORo">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.444.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.443.0>,{amqp_params_network,nil,<<"JmRZ914ZltyOkEacnJCL8TaPHBZqQpmQx50Mlsrw5RHkw6DLf6fMWjU+Vwqq2ORo">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 08:00:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.442.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.444.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.443.0>,{amqp_params_network,nil,<<"JmRZ914ZltyOkEacnJCL8TaPHBZqQpmQx50Mlsrw5RHkw6DLf6fMWjU+Vwqq2ORo">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 08:00:29 =SUPERVISOR REPORT====
+     Supervisor: {<0.440.0>,'Elixir.Supervisor.Default'}
+     Context:    start_error
+     Reason:     {{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"JmRZ914ZltyOkEacnJCL8TaPHBZqQpmQx50Mlsrw5RHkw6DLf6fMWjU+Vwqq2ORo">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.444.0>,connect,60000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-26 08:00:29 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"JmRZ914ZltyOkEacnJCL8TaPHBZqQpmQx50Mlsrw5RHkw6DLf6fMWjU+Vwqq2ORo">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.444.0>,connect,60000]}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-26 08:00:29 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.410.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]}]},{<0.443.0>,{amqp_params_network,nil,<<"JmRZ914ZltyOkEacnJCL8TaPHBZqQpmQx50Mlsrw5RHkw6DLf6fMWjU+Vwqq2ORo">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.444.0>,connect,60000]}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.409.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.411.0>,normal}]
+    links: [<0.409.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 180
+  neighbours:
+2020-04-26 08:00:32 =ERROR REPORT====
+** Generic server <0.525.0> terminating 
+** Last message in was connect
+** When Server state == {<0.524.0>,{amqp_params_network,nil,<<"wVXbpL1iEg/gEkKvCmNQJa7o/OrTIjsGfI48Osg1PdDXgB32Nfbp8W9ZSNlQx7mz">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}
+** Reason for termination ==
+** {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"wVXbpL1iEg/gEkKvCmNQJa7o/OrTIjsGfI48Osg1PdDXgB32Nfbp8W9ZSNlQx7mz">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+** Client 'Elixir.Api.Supervisors.Connection' stacktrace
+** [{gen,do_call,4,[{file,"gen.erl"},{line,167}]},{gen_server,call,3,[{file,"gen_server.erl"},{line,219}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]
+2020-04-26 08:00:32 =CRASH REPORT====
+  crasher:
+    initial call: amqp_gen_connection:init/1
+    pid: <0.525.0>
+    registered_name: []
+    exception error: {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"wVXbpL1iEg/gEkKvCmNQJa7o/OrTIjsGfI48Osg1PdDXgB32Nfbp8W9ZSNlQx7mz">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.523.0>,amqp_sup,<0.319.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.523.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 10958
+    stack_size: 27
+    reductions: 36307
+  neighbours:
+2020-04-26 08:00:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.523.0>,amqp_connection_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"wVXbpL1iEg/gEkKvCmNQJa7o/OrTIjsGfI48Osg1PdDXgB32Nfbp8W9ZSNlQx7mz">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.525.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.524.0>,{amqp_params_network,nil,<<"wVXbpL1iEg/gEkKvCmNQJa7o/OrTIjsGfI48Osg1PdDXgB32Nfbp8W9ZSNlQx7mz">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 08:00:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.523.0>,amqp_connection_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.525.0>},{name,connection},{mfargs,{amqp_gen_connection,start_link,[<0.524.0>,{amqp_params_network,nil,<<"wVXbpL1iEg/gEkKvCmNQJa7o/OrTIjsGfI48Osg1PdDXgB32Nfbp8W9ZSNlQx7mz">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}]}},{restart_type,intrinsic},{shutdown,brutal_kill},{child_type,worker}]
+
+2020-04-26 08:00:32 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Api.Supervisors.Connection:init/1
+    pid: <0.522.0>
+    registered_name: []
+    exception exit: {{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"wVXbpL1iEg/gEkKvCmNQJa7o/OrTIjsGfI48Osg1PdDXgB32Nfbp8W9ZSNlQx7mz">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.525.0>,connect,60000]}},[{gen_server,call,3,[{file,"gen_server.erl"},{line,223}]},{'Elixir.AMQP.Connection',do_open,2,[{file,"lib/amqp/connection.ex"},{line,207}]},{'Elixir.Api.Supervisors.Connection',connect,0,[{file,"lib/api/supervisors/connection.ex"},{line,17}]},{'Elixir.Api.Supervisors.Connection',init,1,[{file,"lib/api/supervisors/connection.ex"},{line,13}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.521.0>,'Elixir.Api.Supervisors.Supervisor','Elixir.Api.Supervisor',<0.386.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.521.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 27
+    reductions: 15009
+  neighbours:
+2020-04-26 08:00:32 =SUPERVISOR REPORT====
+     Supervisor: {<0.521.0>,'Elixir.Supervisor.Default'}
+     Context:    start_error
+     Reason:     {{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"wVXbpL1iEg/gEkKvCmNQJa7o/OrTIjsGfI48Osg1PdDXgB32Nfbp8W9ZSNlQx7mz">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.525.0>,connect,60000]}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Connection'},{mfargs,{'Elixir.Api.Supervisors.Connection',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-26 08:00:32 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Api.Supervisor'}
+     Context:    start_error
+     Reason:     {shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"wVXbpL1iEg/gEkKvCmNQJa7o/OrTIjsGfI48Osg1PdDXgB32Nfbp8W9ZSNlQx7mz">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.525.0>,connect,60000]}}}}
+     Offender:   [{pid,undefined},{id,'Elixir.Api.Supervisors.Supervisor'},{mfargs,{'Elixir.Api.Supervisors.Supervisor',start_link,[[]]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]
+
+2020-04-26 08:00:32 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.385.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Supervisor',{shutdown,{failed_to_start_child,'Elixir.Api.Supervisors.Connection',{{function_clause,[{amqp_gen_connection,terminate,[{badarg,[{erlang,byte_size,[nil],[]},{amqp_auth_mechanisms,plain,3,[]},{amqp_network_connection,login,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,277}]},{amqp_network_connection,network_handshake,2,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,204}]},{amqp_network_connection,try_handshake,3,[{file,"/app/deps/amqp_client/src/amqp_network_connection.erl"},{line,184}]},{amqp_gen_connection,handle_call,3,[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,174}]},{gen_server,try_handle_call,4,[{file,"gen_server.erl"},{line,661}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,690}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{<0.524.0>,{amqp_params_network,nil,<<"wVXbpL1iEg/gEkKvCmNQJa7o/OrTIjsGfI48Osg1PdDXgB32Nfbp8W9ZSNlQx7mz">>,<<"/">>,"rabbitmq",5672,0,0,10,50000,none,[fun amqp_auth_mechanisms:plain/3,fun amqp_auth_mechanisms:amqplain/3],[],[]}}],[{file,"/app/deps/amqp_client/src/amqp_gen_connection.erl"},{line,242}]},{gen_server,try_terminate,3,[{file,"gen_server.erl"},{line,673}]},{gen_server,terminate,10,[{file,"gen_server.erl"},{line,858}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]},{gen_server,call,[<0.525.0>,connect,60000]}}}}}},{'Elixir.Api.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.384.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.386.0>,normal}]
+    links: [<0.384.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 184
   neighbours:

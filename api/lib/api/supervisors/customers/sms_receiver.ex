@@ -1,4 +1,4 @@
-defmodule Api.Supervisors.Publisher do
+defmodule Api.Supervisors.Customers.SmsReceiver do
   use GenServer
 
   def start_link(_) do
@@ -8,6 +8,7 @@ defmodule Api.Supervisors.Publisher do
   def init(_) do
     {:ok, channel} = Api.Supervisors.Connection.open_channel()
     Process.link(channel.pid)
+
     {:ok, channel}
   end
 

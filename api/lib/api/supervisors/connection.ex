@@ -1,8 +1,11 @@
 defmodule Api.Supervisors.Connection do
   use GenServer
   require Logger
+  @host System.get_env("RABBITHOST", "localhost")
+  @username System.get_env("RABBITUSER", "guest")
+  @password System.get_env("RABBITPASSWORD", "guest")
 
-  def start_link() do
+  def start_link(_) do
     GenServer.start_link(__MODULE__, [], name: __MODULE__)
   end
 
@@ -11,12 +14,14 @@ defmodule Api.Supervisors.Connection do
   end
 
   defp connect() do
-    case AMQP.Connection.open() do
+    case AMQP.Connection.open(host: @host, username: @username, password: @password) do
       {:ok, conn} ->
         Process.monitor(conn.pid)
+        IO.puts("Conexion ....... RABBITMQ")
+        IO.inspect(conn)
+        IO.puts("Conexion ....... RABBITMQ")
         conn  # this will be our state
-      {:error, err} ->
-        Logger.error("failed to connect: #{inspect err}")
+      {:error, _err} ->
         :timer.sleep(1000)
         connect() # keep trying
     end
@@ -34,5 +39,13 @@ defmodule Api.Supervisors.Connection do
 
   def handle_call(:open_channel, _from, conn) do
     {:reply, AMQP.Channel.open(conn), conn}
+  end
+
+  def child_spec(arg) do
+    %{
+      id: __MODULE__,
+      start: {__MODULE__, :start_link, [arg]},
+      type: :worker
+    }
   end
 end

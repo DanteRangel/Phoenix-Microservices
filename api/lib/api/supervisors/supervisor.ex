@@ -1,23 +1,25 @@
 defmodule Api.Supervisors.Supervisor do
   use Supervisor
+  use GenServer
 
-  def start_link do
-    Supervisor.start_link(__MODULE__, :ok, name: __MODULE__)
+  def start_link(_) do
+    GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
   end
 
   def init(_) do
     children = [
-      %{
-        id: Api.Supervisors.Connection,
-        start: {Api.Supervisors.Connection, :start_link, []}
-      },
-      %{
-        id: Api.Supervisors.Worker,
-        start: {Api.Supervisors.Worker, :start_link, []}
-      }
+      Api.Supervisors.Connection,
+      Api.Supervisors.Worker
     ]
 
-    opts = [strategy: :one_for_one, name: Api.Supervisors.Supervisor]
-    Supervisor.start_link(children, opts)
+    Supervisor.start_link(children, strategy: :rest_for_one)
+  end
+
+  def child_spec(arg) do
+    %{
+      id: __MODULE__,
+      start: {__MODULE__, :start_link, [arg]},
+      type: :supervisor
+    }
   end
 end

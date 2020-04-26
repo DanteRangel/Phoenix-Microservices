@@ -44,6 +44,11 @@
 /microservice_1/priv/static/
 /microservice_2/priv/static/
 
+
+/api/log
+/microservice_1/log
+/microservice_2/log
+
 /pgdata/
 
 .DS_Store

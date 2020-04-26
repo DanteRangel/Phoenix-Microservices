@@ -17,7 +17,6 @@ services:
       # Hostname of our Postgres container
       PGHOST: db
       RABBITHOST: rabbitmq
-      RABBITMQPORT: 5672
       PORT: 4000
     ports:
       # Mapping the port to make the Phoenix app accessible outside of the container
@@ -29,6 +28,7 @@ services:
     depends_on:
       # The db container needs to be started before we start this container
       - db
+      - rabbitmq
     command: sh ./script.sh
     networks:
       - app-tier
@@ -46,7 +46,6 @@ services:
       PGHOST: db
 
       RABBITHOST: rabbitmq
-      RABBITMQPORT: 5672
       PORT: 4000
     ports:
       # Mapping the port to make the Phoenix app accessible outside of the container
@@ -58,6 +57,7 @@ services:
     depends_on:
       # The db container needs to be started before we start this container
       - db
+      - rabbitmq
     command: sh ./script.sh
     networks:
       - app-tier
@@ -74,7 +74,6 @@ services:
       # Hostname of our Postgres container
       PGHOST: db
       RABBITHOST: rabbitmq
-      RABBITMQPORT: 5672
       PORT: 4000
     ports:
       # Mapping the port to make the Phoenix app accessible outside of the container
@@ -86,6 +85,7 @@ services:
     depends_on:
       # The db container needs to be started before we start this container
       - db
+      - rabbitmq
     command: sh ./script.sh
     networks:
       - app-tier
@@ -114,6 +114,10 @@ services:
       - 15672:15672
       - 15671:15671
       - 15692:15692
+    networks:
+      - app-tier
+    depends_on:
+      - db
 #Define the networks
 networks:
   app-tier:

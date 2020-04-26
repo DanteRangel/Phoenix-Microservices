@@ -14,10 +14,7 @@ defmodule Api.Application do
       ApiWeb.Endpoint,
       # Starts a worker by calling: Api.Worker.start_link(arg)
       # {Api.Worker, arg},
-      # %{
-      #   id: Api.Supervisors.Supervisor,
-      #   start: {Api.Supervisors.Supervisor, :start_link, []}
-      # }
+      Api.Supervisors.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
