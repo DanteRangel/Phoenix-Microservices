@@ -2,9 +2,9 @@ use Mix.Config
 
 # Configure your database
 config :api, Api.Repo,
-  username: System.get_env("PGUSER", "danterangel"),
+  username: System.get_env("PGUSER", "postgres"),
   password: System.get_env("PGPASSWORD", "postgres"),
-  database: System.get_env("PGDATABASE", "dev_api"),
+  database: System.get_env("PGDATABASE", "api_database"),
   hostname: System.get_env("PGHOST", "localhost"),
   pool: Ecto.Adapters.SQL.Sandbox
 

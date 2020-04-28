@@ -10,7 +10,7 @@ defmodule Api.Supervisors.Worker do
     children = [
       Api.Supervisors.Publisher
     ]
-    Supervisor.init(children, strategy: :one_for_one)
+    Supervisor.start_link(children, strategy: :one_for_one)
   end
 
   def child_spec(arg) do

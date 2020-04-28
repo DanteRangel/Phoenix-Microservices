@@ -1,4 +1,4 @@
-FROM elixir:1.10.2
+FROM elixir:1.7
 # FROM ubuntu:latest
 MAINTAINER Dante Rangel <dante.rangelrobles@gmail.com>
 
