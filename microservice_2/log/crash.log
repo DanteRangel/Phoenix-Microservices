@@ -1,0 +1,24 @@
+2020-04-28 02:40:39 =SUPERVISOR REPORT====
+     Supervisor: {<0.350.0>,'Elixir.DBConnection.ConnectionPool.Pool'}
+     Context:    shutdown_error
+     Reason:     shutdown
+     Offender:   [{pid,<0.359.0>},{id,{'Elixir.Postgrex.Protocol',<0.349.0>,9}},{mfargs,{'Elixir.DBConnection.Connection',start_link,['Elixir.Postgrex.Protocol',[{pool_index,9},{types,'Elixir.Postgrex.DefaultTypes'},{port,5432},{repo,'Elixir.Microservice2.Repo'},{telemetry_prefix,[microservice2,repo]},{otp_app,microservice_2},{timeout,15000},{username,<<"postgres">>},{password,<<"postgres">>},{database,<<"api_database">>},{hostname,<<"db">>},{show_sensitive_data_on_connection_error,true},{pool_size,10},{pool,'Elixir.DBConnection.ConnectionPool'}],<0.349.0>,#Ref<0.2654671783.217448449.78869>]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-28 02:40:39 =SUPERVISOR REPORT====
+     Supervisor: {<0.350.0>,'Elixir.DBConnection.ConnectionPool.Pool'}
+     Context:    shutdown_error
+     Reason:     shutdown
+     Offender:   [{pid,<0.358.0>},{id,{'Elixir.Postgrex.Protocol',<0.349.0>,8}},{mfargs,{'Elixir.DBConnection.Connection',start_link,['Elixir.Postgrex.Protocol',[{pool_index,8},{types,'Elixir.Postgrex.DefaultTypes'},{port,5432},{repo,'Elixir.Microservice2.Repo'},{telemetry_prefix,[microservice2,repo]},{otp_app,microservice_2},{timeout,15000},{username,<<"postgres">>},{password,<<"postgres">>},{database,<<"api_database">>},{hostname,<<"db">>},{show_sensitive_data_on_connection_error,true},{pool_size,10},{pool,'Elixir.DBConnection.ConnectionPool'}],<0.349.0>,#Ref<0.2654671783.217448449.78869>]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-28 02:40:39 =SUPERVISOR REPORT====
+     Supervisor: {<0.350.0>,'Elixir.DBConnection.ConnectionPool.Pool'}
+     Context:    shutdown_error
+     Reason:     shutdown
+     Offender:   [{pid,<0.357.0>},{id,{'Elixir.Postgrex.Protocol',<0.349.0>,7}},{mfargs,{'Elixir.DBConnection.Connection',start_link,['Elixir.Postgrex.Protocol',[{pool_index,7},{types,'Elixir.Postgrex.DefaultTypes'},{port,5432},{repo,'Elixir.Microservice2.Repo'},{telemetry_prefix,[microservice2,repo]},{otp_app,microservice_2},{timeout,15000},{username,<<"postgres">>},{password,<<"postgres">>},{database,<<"api_database">>},{hostname,<<"db">>},{show_sensitive_data_on_connection_error,true},{pool_size,10},{pool,'Elixir.DBConnection.ConnectionPool'}],<0.349.0>,#Ref<0.2654671783.217448449.78869>]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2020-04-28 02:40:39 =SUPERVISOR REPORT====
+     Supervisor: {<0.350.0>,'Elixir.DBConnection.ConnectionPool.Pool'}
+     Context:    shutdown_error
+     Reason:     shutdown
+     Offender:   [{pid,<0.356.0>},{id,{'Elixir.Postgrex.Protocol',<0.349.0>,6}},{mfargs,{'Elixir.DBConnection.Connection',start_link,['Elixir.Postgrex.Protocol',[{pool_index,6},{types,'Elixir.Postgrex.DefaultTypes'},{port,5432},{repo,'Elixir.Microservice2.Repo'},{telemetry_prefix,[microservice2,repo]},{otp_app,microservice_2},{timeout,15000},{username,<<"postgres">>},{password,<<"postgres">>},{database,<<"api_database">>},{hostname,<<"db">>},{show_sensitive_data_on_connection_error,true},{pool_size,10},{pool,'Elixir.DBConnection.ConnectionPool'}],<0.349.0>,#Ref<0.2654671783.217448449.78869>]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+

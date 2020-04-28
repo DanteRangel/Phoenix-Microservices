@@ -17,6 +17,8 @@ services:
       # Hostname of our Postgres container
       PGHOST: db
       RABBITHOST: rabbitmq
+      RABBITUSER: guest
+      RABBITPASSWORD: guest
       PORT: 4000
     ports:
       # Mapping the port to make the Phoenix app accessible outside of the container
@@ -44,8 +46,11 @@ services:
       PGPORT: 5432
       # Hostname of our Postgres container
       PGHOST: db
-
+      MAIL_USERNAME: 'dante.rangelrobles@gmail.com'
+      MAIL_PASSWORD: '311332065'
       RABBITHOST: rabbitmq
+      RABBITUSER: guest
+      RABBITPASSWORD: guest
       PORT: 4000
     ports:
       # Mapping the port to make the Phoenix app accessible outside of the container
@@ -74,6 +79,8 @@ services:
       # Hostname of our Postgres container
       PGHOST: db
       RABBITHOST: rabbitmq
+      RABBITUSER: guest
+      RABBITPASSWORD: guest
       PORT: 4000
     ports:
       # Mapping the port to make the Phoenix app accessible outside of the container

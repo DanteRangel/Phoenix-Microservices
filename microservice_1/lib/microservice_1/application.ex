@@ -11,9 +11,10 @@ defmodule Microservice1.Application do
       # Start the Ecto repository
       Microservice1.Repo,
       # Start the endpoint when the application starts
-      Microservice1Web.Endpoint
+      Microservice1Web.Endpoint,
       # Starts a worker by calling: Microservice1.Worker.start_link(arg)
       # {Microservice1.Worker, arg},
+      Microservice1.Supervisors.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
