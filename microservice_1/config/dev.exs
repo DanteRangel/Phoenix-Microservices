@@ -2,10 +2,10 @@ use Mix.Config
 
 # Configure your database
 config :microservice_1, Microservice1.Repo,
-  username: System.get_env("PGUSER", "postgres"),
-  password: System.get_env("PGPASSWORD", "postgres"),
-  database: System.get_env("PGDATABASE", "api_database"),
-  hostname: System.get_env("PGHOST", "localhost"),
+  username: System.get_env("PGUSER"),
+  password: System.get_env("PGPASSWORD"),
+  database: System.get_env("PGDATABASE"),
+  hostname: System.get_env("PGHOST"),
 
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -23,6 +23,16 @@ config :microservice_1, Microservice1Web.Endpoint,
   check_origin: false,
   watchers: []
 
+config :microservice_1, Microservice1.Mailer,
+  adapter: Bamboo.SMTPAdapter,
+  server: "smtp.gmail.com",
+  port: 587,
+  username: System.get_env("MAIL_USERNAME"),
+  password: System.get_env("MAIL_PASSWORD"),
+  tls: :if_available, # can be `:always` or `:never`
+  allowed_tls_versions: ["tlsv1", "tlsv1.1", "tlsv1.2"], # or {":system", ALLOWED_TLS_VERSIONS"} w/ comma seprated values (e.g. "tlsv1.1,tlsv1.2")
+  ssl: false, # can be `true`
+  retries: 1
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

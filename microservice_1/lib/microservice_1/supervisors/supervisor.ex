@@ -9,7 +9,7 @@ defmodule Microservice1.Supervisors.Supervisor do
   def init(_) do
     children = [
       Microservice1.Supervisors.Connection,
-      Microservice1.Supervisors.Worker,
+      Microservice1.Supervisors.Worker
     ]
 
     Supervisor.start_link(children, strategy: :rest_for_one)

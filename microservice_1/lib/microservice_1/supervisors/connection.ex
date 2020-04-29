@@ -1,9 +1,9 @@
 defmodule Microservice1.Supervisors.Connection do
   use GenServer
   require Logger
-  @host System.get_env("RABBITHOST", "localhost")
-  @username System.get_env("RABBITUSER", "guest")
-  @password System.get_env("RABBITPASSWORD", "guest")
+  @host System.get_env("RABBITHOST")
+  @username System.get_env("RABBITUSER")
+  @password System.get_env("RABBITPASSWORD")
 
   def start_link(_) do
     GenServer.start_link(__MODULE__, [], name: __MODULE__)
@@ -14,7 +14,7 @@ defmodule Microservice1.Supervisors.Connection do
   end
 
   defp connect() do
-    case AMQP.Connection.open(host: @host, username: @username, password: @password) do
+    case AMQP.Connection.open("amqp://#{@username}:#{@password}@#{@host}") do
       {:ok, conn} ->
         Process.monitor(conn.pid)
         IO.puts("Conexion ....... RABBITMQ")

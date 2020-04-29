@@ -45,9 +45,12 @@
 /microservice_2/priv/static/
 
 
-/api/log
-/microservice_1/log
-/microservice_2/log
+/api/log/*
+/microservice_1/log/*
+/microservice_2/log/*
+
+
+docker-compose.yml
 
 /pgdata/
 

@@ -20,7 +20,7 @@ defmodule Microservice1.MixProject do
   def application do
     [
       mod: {Microservice1.Application, []},
-      extra_applications: [:logger, :runtime_tools, :amqp]
+      extra_applications: [:logger, :runtime_tools, :amqp, :bamboo, :bamboo_smtp]
     ]
   end
 
@@ -42,7 +42,7 @@ defmodule Microservice1.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:amqp, "1.4.2"},
-      {:gen_smtp, "0.15.0"},
+      {:gen_smtp, "~> 0.15.0"},
       {:bamboo_smtp, "~> 2.1.0"}
     ]
   end
