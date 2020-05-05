@@ -55,6 +55,7 @@ services:
     ports:
       # Mapping the port to make the Phoenix app accessible outside of the container
       - 4001:4000
+      - 587:587
     volumes:
       - ./microservice_1/:/app
       - /app/_build
@@ -110,7 +111,7 @@ services:
       - ./pgdata:/var/lib/postgresql/data
     ports:
       # Mapping the port to make the Phoenix app accessible outside of the container
-      - 5432:5432
+      - 5433:5432
     networks:
       - app-tier
   rabbitmq:

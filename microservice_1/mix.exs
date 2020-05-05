@@ -42,8 +42,9 @@ defmodule Microservice1.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:amqp, "1.4.2"},
-      {:gen_smtp, "~> 0.15.0"},
-      {:bamboo_smtp, "~> 2.1.0"}
+      {:gen_smtp, "0.15.0"},
+      {:bamboo, "~> 1.2"},
+      {:bamboo_smtp, "~> 2.1"}
     ]
   end
 

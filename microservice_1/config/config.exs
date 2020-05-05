@@ -32,6 +32,7 @@ config :phoenix, :json_library, Jason
 config :microservice_1, Microservice1.Mailer,
   adapter: Bamboo.SMTPAdapter,
   server: "smtp.gmail.com",
+  hostname: "gmail.com",
   port: 587,
   username: System.get_env("MAIL_USERNAME"),
   password: System.get_env("MAIL_PASSWORD"),

@@ -22,11 +22,7 @@ defmodule Microservice1.Mails.Login do
   end
 
   def welcome_email(recipient, subject ,msg) do
-    IO.inspect(recipient)
-    IO.inspect(subject)
     username = System.get_env("MAIL_USERNAME")
-    IO.inspect(username)
-    IO.inspect(msg)
     new_email(
       to: recipient,
       from: username,
